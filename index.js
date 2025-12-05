@@ -162,3 +162,16 @@ function teamNames() {
     const game = gameObject();
     return [game.home.teamName, game.away.teamName];
 }
+function playerNumbers(teamName) {
+    const game = gameObject();
+
+    if (game.home.teamName === teamName) {
+        return Object.values(game.home.players).map(player => player.number);
+    }
+
+    if (game.away.teamName === teamName) {
+        return Object.values(game.away.players).map(player => player.number);
+    }
+
+    return null; // Team not found
+}
