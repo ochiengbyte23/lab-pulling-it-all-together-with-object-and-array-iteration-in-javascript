@@ -201,10 +201,3 @@ function bigShoeRebounds() {
 
     return playerWithLargestShoe ? playerWithLargestShoe.rebounds : null;
 }
-console.log(numPointsScored("Alan Anderson")); // 22
-console.log(shoeSize("Mason Plumlee")); // 19
-console.log(teamColors("Brooklyn Nets")); // ["Black", "White"]
-console.log(teamNames()); // ["Brooklyn Nets", "Charlotte Hornets"]
-console.log(playerNumbers("Charlotte Hornets")); // [4, 0, 2, 8, 33]
-console.log(playerStats("Ben Gordon")); // { number: 8, shoe: 15, points: 33, ... }
-console.log(bigShoeRebounds());
