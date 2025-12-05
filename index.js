@@ -114,3 +114,20 @@ function gameObject() {
         },
     };
 }
+
+function numPointsScored(playerName) {
+    const game = gameObject();
+
+    // Check home team
+    if (game.home.players[playerName]) {
+        return game.home.players[playerName].points;
+    }
+
+    // Check away team
+    if (game.away.players[playerName]) {
+        return game.away.players[playerName].points;
+    }
+
+    return null; // Player not found
+}
+
