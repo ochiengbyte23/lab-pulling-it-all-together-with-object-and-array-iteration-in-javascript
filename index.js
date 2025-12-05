@@ -158,3 +158,7 @@ function teamColors(teamName) {
 
     return null; // Team not found
 }
+function teamNames() {
+    const game = gameObject();
+    return [game.home.teamName, game.away.teamName];
+}
