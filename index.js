@@ -179,3 +179,32 @@ function playerStats(playerName) {
     const game = gameObject();
     return game.home.players[playerName] || game.away.players[playerName] || null;
 }
+function bigShoeRebounds() {
+    const game = gameObject();
+    let largestShoe = 0;
+    let playerWithLargestShoe = null;
+
+    for (const playerName in game.home.players) {
+        const player = game.home.players[playerName];
+        if (player.shoe > largestShoe) {
+            largestShoe = player.shoe;
+            playerWithLargestShoe = player;
+        }
+    }
+    for (const playerName in game.away.players) {
+        const player = game.away.players[playerName];
+        if (player.shoe > largestShoe) {
+            largestShoe = player.shoe;
+            playerWithLargestShoe = player;
+        }
+    }
+
+    return playerWithLargestShoe ? playerWithLargestShoe.rebounds : null;
+}
+console.log(numPointsScored("Alan Anderson")); // 22
+console.log(shoeSize("Mason Plumlee")); // 19
+console.log(teamColors("Brooklyn Nets")); // ["Black", "White"]
+console.log(teamNames()); // ["Brooklyn Nets", "Charlotte Hornets"]
+console.log(playerNumbers("Charlotte Hornets")); // [4, 0, 2, 8, 33]
+console.log(playerStats("Ben Gordon")); // { number: 8, shoe: 15, points: 33, ... }
+console.log(bigShoeRebounds());
