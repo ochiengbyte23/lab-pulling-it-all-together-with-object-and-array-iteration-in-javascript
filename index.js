@@ -175,3 +175,7 @@ function playerNumbers(teamName) {
 
     return null; // Team not found
 }
+function playerStats(playerName) {
+    const game = gameObject();
+    return game.home.players[playerName] || game.away.players[playerName] || null;
+}
