@@ -130,4 +130,19 @@ function numPointsScored(playerName) {
 
     return null; // Player not found
 }
+function shoeSize(playerName) {
+    const game = gameObject();
+
+    // Check home team
+    if (game.home.players[playerName]) {
+        return game.home.players[playerName].shoe;
+    }
+
+    // Check away team
+    if (game.away.players[playerName]) {
+        return game.away.players[playerName].shoe;
+    }
+
+    return null; // Player not found
+}
 
