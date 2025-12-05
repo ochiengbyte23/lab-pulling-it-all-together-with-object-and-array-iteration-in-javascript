@@ -145,4 +145,16 @@ function shoeSize(playerName) {
 
     return null; // Player not found
 }
+function teamColors(teamName) {
+    const game = gameObject();
 
+    if (game.home.teamName === teamName) {
+        return game.home.colors;
+    }
+
+    if (game.away.teamName === teamName) {
+        return game.away.colors;
+    }
+
+    return null; // Team not found
+}
